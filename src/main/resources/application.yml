@@ -1,0 +1,30 @@
+#配置多数据源
+spring:
+  datasource:
+    dev:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://${ip}/daolan?zeroDateTimeBehavior=convertToNull&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      jdbc-url: ${spring.datasource.dev.url}
+      username: root
+      password: Djdb+1205
+      type: com.zaxxer.hikari.HikariDataSource
+    online:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://${ip}/daolan?zeroDateTimeBehavior=convertToNull&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      jdbc-url: ${spring.datasource.online.url}
+      username: root
+      password: Banda@234
+      type: com.zaxxer.hikari.HikariDataSource
+
+
+#mybatis 设置
+mybatis:
+  mapper-locations: classpath*:mapper/*/*.xml
+  config-location: classpath*:main/config/mybatis-config.xml
+
+cust:
+  prop:
+    sort1Length: 11
+
+devInid: 954904680541196288
+onlineInid: 1143354745487101952
